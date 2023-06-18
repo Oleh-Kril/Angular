@@ -19,8 +19,8 @@
       <label for="contactChoice3">Enable letters</label>
   </div>
 
-  <button class="p-2 bg-teal-600 text-white bg-opacity-100 m-auto md:w-1/6"
-  (click)="onButtonClick()">Generate</button>
+  <button class="p-2 bg-teal-600 text-white bg-opacity-100 m-auto md:w-1/6 disabled:bg-opacity-40"
+  (click)="onButtonClick()" [disabled]="!(isLetters || isCharacters || isDigits)">Generate</button>
 
   <div *ngIf="password">
     <label for="password" class="mr-10">Your password:</label>

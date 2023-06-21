@@ -1,9 +1,9 @@
-<div class="grid lg:grid-cols-3 justify-center text-center gap-2.5 mt-10 m-auto  shadow p-5 md:p-20 max-h-screen">
-<app-card
-*ngFor="let card of cardsData"
-[title]="card.title"
-[description]="card.description"
-[author]="card.author"
-/>
+<div class="w-1/2 m-auto flex flex-col justify-center items-center gap-12 bg-amber-50 p-10">
+  <label for="amountInput" class="text-2xl">Amount in Ukraine currency: </label>
+  <input type="number" [defaultValue]="amount" id="amountInput" class="bg-gray-100" (input)="onAmountChange($event.target)">
 
+  <p class="w-full">Converted to dollars: {{Number(amount) | convert:"USD"}}</p>
+  <p class="w-full">Converted to GBP: {{Number(amount) | convert:"GBP"}}</p>
 </div>
+
+

@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import {NgOptimizedImage} from "@angular/common"
+import {DecimalPipe, NgOptimizedImage} from "@angular/common"
+import { ConvertPipe } from './pipes/convert.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    ConvertPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage
   ],
-  providers: [],
+  providers: [DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
